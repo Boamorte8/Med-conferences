@@ -1,18 +1,27 @@
-<div class="col-md-12">
-    <div class="input-group">            
-        <input type="text" class="form-control" placeholder="Filtro de Texto..." ng-model="vm.searchText">
+<div class="col-md-12 row form-container">
+    <form name="conferenceForm" class="form-inline" ng-submit="vm.addConference(vm.newConference)">
+        <div class="form-group">
+            <label for="conferenceName">Add a description</label>
+            <input type="text" class="form-control" id="conferenceName" 
+                placeholder="Description" ng-model="vm.newConference.name" required>
+        </div>
+        <button type="submit" class="btn btn-success" ng-disabled="conferenceForm.$invalid">
+            <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Save
+        </button>
+    </form>
+</div>
+
+<div class="col-md-12 row">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Text Filter..." ng-model="vm.searchText">
         <span class="input-group-addon info">
             <span class="glyphicon glyphicon-search"></span>
-        </span>        
+        </span>
     </div>
-</div>    
-
-<br>
-
-<div class="col-md-12">
+    
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="conference in vm.conferences">
-            {{conference.name}}
+            {{conference.name}} - {{conference.createdAt | date : "dd/MM/yyyy h:mma"}}
         </li>
     </ul>
 </div>
