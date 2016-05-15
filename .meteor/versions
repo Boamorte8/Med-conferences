@@ -1,7 +1,6 @@
 allow-deny@1.0.3
 angular-templates@1.0.3
 angular-templates-runtime@0.0.1
-autopublish@1.0.6
 autoupdate@1.2.7
 babel-compiler@6.6.1
 babel-runtime@0.1.7
@@ -62,6 +61,7 @@ standard-minifier-css@1.0.5
 standard-minifier-js@1.0.5
 templating-tools@1.0.3
 tracker@1.0.12
+twbs:bootstrap@3.3.6
 ui@1.0.10
 underscore@1.0.7
 url@1.0.8

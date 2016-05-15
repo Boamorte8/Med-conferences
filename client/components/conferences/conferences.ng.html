@@ -1,0 +1,18 @@
+<div class="col-md-12">
+    <div class="input-group">            
+        <input type="text" class="form-control" placeholder="Filtro de Texto..." ng-model="vm.searchText">
+        <span class="input-group-addon info">
+            <span class="glyphicon glyphicon-search"></span>
+        </span>        
+    </div>
+</div>    
+
+<br>
+
+<div class="col-md-12">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="conference in vm.conferences">
+            {{conference.name}}
+        </li>
+    </ul>
+</div>

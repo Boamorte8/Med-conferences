@@ -3,11 +3,20 @@ import Conferences from '../../../shared/collections'
 class ConferencesController {
 
   constructor ($scope, $reactive) {
-    $reactive(this).attach($scope)
+    var vm =  this;
+    $reactive(this).attach($scope);
+    
+    vm.searchText  = '';
 
-    this.helpers({
+    vm.subscribe('GetConferences', () => {
+        return [            
+            vm.getReactively('searchText')
+        ]
+    });
+
+    vm.helpers({
       conferences: () => {
-        return Conferences.find({})
+        return Conferences.find({});
       }
     })
   }
